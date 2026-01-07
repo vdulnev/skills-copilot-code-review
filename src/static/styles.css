@@ -73,6 +73,235 @@ header h2 {
   font-size: 1.2rem;
 }
 
+/* Announcement Banner */
+.announcement-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  position: relative;
+  animation: slideDown 0.5s ease-out;
+}
+
+.announcement-banner.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.manage-announcements-button {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.manage-announcements-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.manage-announcements-button.hidden {
+  display: none;
+}
+
+/* Announcements Management Modal */
+#announcements-modal .modal-content {
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#announcements-modal h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.announcements-list {
+  margin-bottom: 20px;
+}
+
+.announcement-item {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.announcement-item.expired {
+  opacity: 0.6;
+  background-color: var(--error-light);
+  border-color: var(--error);
+}
+
+.announcement-item.pending {
+  background-color: var(--warning-light);
+  border-color: var(--warning);
+}
+
+.announcement-message {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  padding-right: 60px;
+}
+
+.announcement-dates {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.announcement-status {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.announcement-status.active {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.announcement-status.expired {
+  background-color: var(--error-light);
+  color: var(--error);
+}
+
+.announcement-status.pending {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.announcement-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 5px;
+}
+
+.edit-announcement,
+.delete-announcement {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.edit-announcement:hover {
+  background-color: rgba(21, 101, 192, 0.1);
+}
+
+.delete-announcement:hover {
+  background-color: rgba(198, 40, 40, 0.1);
+}
+
+.announcement-form {
+  background-color: var(--background);
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.announcement-form h4 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.announcement-form .form-group {
+  margin-bottom: 12px;
+}
+
+.announcement-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.announcement-form input,
+.announcement-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.announcement-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.announcement-form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.announcement-form button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-announcement-btn {
+  background-color: var(--border);
+  color: var(--text-primary);
+  border: none;
+}
+
+.cancel-announcement-btn:hover {
+  background-color: var(--border-focus);
+}
+
+.no-announcements {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
